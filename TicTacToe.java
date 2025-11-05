@@ -129,7 +129,7 @@ public class TicTacToe implements ActionListener {
     // Delay 3s before resetting the game after someone wins or draws
     public void scheduleReset() {
         disableButtons();
-        new javax.swing.Timer(13000, e -> resetGame()).start();
+        new javax.swing.Timer(2500, e -> resetGame()).start();
     }
 
     public void resetGame() {
@@ -223,7 +223,6 @@ public class TicTacToe implements ActionListener {
     }
 
     //Highlight the moves of the winner
-
     public void highlightWinner(String player) {
         int[][] winConditions = {
                 { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 },
