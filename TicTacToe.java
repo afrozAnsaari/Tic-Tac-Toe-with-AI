@@ -71,7 +71,7 @@ public class TicTacToe implements ActionListener {
         }
     }
 
-    // Run AI in background to prevent UI freezing
+    // Run AI in background via threading to prevent UI freezing
     public void aiMoveAsync() {
         textField.setText("AI thinking...");
         new Thread(() -> {
@@ -126,10 +126,10 @@ public class TicTacToe implements ActionListener {
         }
     }
 
-    // Delay 1.5s before restarting game
+    // Delay 3s before resetting the game after someone wins or draws
     public void scheduleReset() {
         disableButtons();
-        new javax.swing.Timer(1500, e -> resetGame()).start();
+        new javax.swing.Timer(13000, e -> resetGame()).start();
     }
 
     public void resetGame() {
@@ -221,6 +221,8 @@ public class TicTacToe implements ActionListener {
         }
         return false;
     }
+
+    //Highlight the moves of the winner
 
     public void highlightWinner(String player) {
         int[][] winConditions = {
